@@ -28,10 +28,24 @@ function isPalindrome(word) {
   return word === newWord;
 }
 
+function validateInputNumber(number) {
+  return isNaN(number) || number < 1 || number > 5;
+}
+/**
+ * Generate a random namber between given min and max value
+ * @param {number} min the minimum value
+ * @param {number} max the maximum value
+ * @returns {number}
+ */
 function generateRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + 1;
 }
 
+/**
+ * Return if given number is even
+ * @param {number} number the number to text
+ * @returns {boolean}
+ */
 function isEven(number) {
   return !(number % 2);
 }
@@ -58,11 +72,14 @@ palindromeButton.addEventListener("click", function () {
 evenOrOddButton.addEventListener("click", function () {
   const userNumber = parseInt(evenOrOddInput.value);
 
-  //   const isValid = validateInput(userNumber);
+  const isInvalid = validateInputNumber(userNumber);
 
   const userChoice = evenOrOddChoice.value;
 
-  //if (!isValid) return;
+  if (isInvalid) {
+    evenOrOddResult.innerText = "Devi inserire un numero valido da 1 a 5!!";
+    return;
+  }
 
   const cpuNumber = generateRandom(1, 5);
 
