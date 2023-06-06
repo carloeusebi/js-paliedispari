@@ -15,15 +15,46 @@
 
 <body>
     <main class="vh-100 bg-light p-5">
-        <div class="d-flex align-items-end">
-            <div class="mb-3">
-                <label for="palindrome-input">Check if palindrome:</label>
-                <input type="text" class="form-control" id="palindrome-input" placeholder="anna" autofocus>
-            </div>
-            <button type="button" class="btn btn-primary ms-3 mb-3" id="palindrome-button">Check!</button>
-            <p class="palindrome-result"></p>
-        </div>
 
+        <!-- PALINDROME -->
+        <section id="palindrome">
+            <div class="d-flex align-items-end mb-3">
+                <!-- input -->
+                <div>
+                    <label for="palindrome-input">Check if palindrome:</label>
+                    <input type="text" class="form-control" id="palindrome-input" placeholder="anna" autofocus>
+                </div>
+                <!-- button -->
+                <div class="d-flex align-items-center">
+                    <button type="button" class="btn btn-primary ms-3" id="palindrome-button">Check!</button>
+                    <p class="ms-3 mb-0" id="palindrome-result"></p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <!-- EVEN OR ODD -->
+        <section id="even-or-odd">
+            <div class="d-flex align-items-end">
+                <!-- input -->
+                <div>
+                    <label for="number-input">Choose a number between 1 and 5:</label>
+                    <input type="number" class="form-control" id="number-input" min="1" max="5">
+                </div>
+                <div class="ms-3">
+                    <label for="eo-choice-input">Choose Even or Odd</label>
+                    <select type="number" class="form-control" id="eo-choice-input">
+                        <option value="even" selected>Even</option>
+                        <option value="odd">Odd</option>
+                    </select>
+                </div>
+                <div class="d-flex align-items-center ms-3">
+                    <button type="button" class="btn btn-primary">Play</button>
+                    <p class="ms-3 mb-0" id="evenorodd-result"></p>
+                </div>
+
+            </div>
+        </section>
     </main>
 </body>
 
