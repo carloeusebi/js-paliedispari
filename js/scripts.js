@@ -28,6 +28,14 @@ function isPalindrome(word) {
   return word === newWord;
 }
 
+function generateRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + 1;
+}
+
+function isEven(number) {
+  return !(number % 2);
+}
+
 // PALINDROME ALGORITHM
 
 palindromeButton.addEventListener("click", function () {
@@ -44,4 +52,31 @@ palindromeButton.addEventListener("click", function () {
   const message = `'${userWord} ' ${result} palindrome!`;
 
   palindromeResult.innerHTML = message;
+});
+
+// EVEN OR ODD ALGORITHM
+evenOrOddButton.addEventListener("click", function () {
+  const userNumber = parseInt(evenOrOddInput.value);
+
+  //   const isValid = validateInput(userNumber);
+
+  const userChoice = evenOrOddChoice.value;
+
+  //if (!isValid) return;
+
+  const cpuNumber = generateRandom(1, 5);
+
+  const sum = userNumber + cpuNumber;
+
+  const resultIsEven = isEven(sum);
+
+  let result = "CPU Wins!!";
+
+  if ((resultIsEven && userChoice === "even") || (!resultIsEven && userChoice === "odd")) {
+    result = "Player Wins!!";
+  }
+
+  const message = `<strong>${result}</strong> CPU choice: ${cpuNumber}`;
+
+  evenOrOddResult.innerHTML = message;
 });
