@@ -27,3 +27,21 @@ function isPalindrome(word) {
 
   return word === newWord;
 }
+
+// PALINDROME ALGORITHM
+
+palindromeButton.addEventListener("click", function () {
+  const userWord = palindromeInput.value.trim();
+
+  if (!userWord) return;
+
+  let result = "<strong>is not</strong>";
+
+  const palindrome = isPalindrome(userWord);
+
+  if (palindrome) result = "<strong>is</strong>";
+
+  const message = `'${userWord} ' ${result} palindrome!`;
+
+  palindromeResult.innerHTML = message;
+});
