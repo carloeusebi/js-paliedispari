@@ -57,15 +57,9 @@ palindromeButton.addEventListener("click", function () {
 
   if (!userWord) return;
 
-  let result = "<strong>is not</strong>";
+  const result = isPalindrome(userWord) ? `<strong>is</strong>` : `<strong>is not</strong>`;
 
-  const palindrome = isPalindrome(userWord);
-
-  if (palindrome) result = "<strong>is</strong>";
-
-  const message = `'${userWord} ' ${result} palindrome!`;
-
-  palindromeResult.innerHTML = message;
+  palindromeResult.innerHTML = `${userWord} ${result} palindrome.`;
 });
 
 // EVEN OR ODD ALGORITHM
@@ -87,11 +81,7 @@ evenOrOddButton.addEventListener("click", function () {
 
   const resultIsEven = isEven(sum);
 
-  let result = "CPU Wins!!";
-
-  if ((resultIsEven && userChoice === "even") || (!resultIsEven && userChoice === "odd")) {
-    result = "Player Wins!!";
-  }
+  const result = (isEven(sum) && userChoice === "even") || (!isEven(sum) && userChoice === "odd") ? "Player Wins!!" : "CPU Wins!!";
 
   const message = `<strong>${result}</strong> CPU choice: ${cpuNumber}`;
 
